@@ -50,7 +50,7 @@ spec:
       port: 8081
       protocol: TCP
       targetPort: 7dtd-telnet
-    - name: 7dtd-htto
+    - name: 7dtd-http
       port: 8082
       protocol: TCP
       targetPort: 7dtd-http
