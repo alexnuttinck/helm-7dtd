@@ -12,31 +12,53 @@ imagePullSecrets: []
 ##
 deployment:
   replicas: 1
-  extraEnv:
-  # Check the variable that can be passed here: https://github.com/vinanrra/Docker-7DaysToDie/blob/master/docs/parameters.md#7-days-to-die
-    - START_MODE=1
-    - VERSION=stable
-    - PUID=1000
-    - PGID=1000
-    - TimeZone=Europe/Brussels
-    - TEST_ALERT=NO
-    - UPDATE_MODS=NO
-    - ALLOC_FIXES=NO
-    - ALLOC_FIXES_UPDATE
-    - UNDEAD_LEGACY=NO
-    - UNDEAD_LEGACY_VERSION=stable
-    - UNDEAD_LEGACY_UPDATE=NO
-    - ENZOMBIES=NO
-    - ENZOMBIES_ADDON_SNUFKIN=NO
-    - ENZOMBIES_ADDON_ROBELOTO=NO
-    - ENZOMBIES_ADDON_NONUDES=NO
-    - ENZOMBIES_UPDATE=NO
-    - CPM=NO
-    - CPM_UPDATE=NO
-    - BEPINEX=NO
-    - BEPINEX_UPDATE=NO
-    - BACKUP=NO
-    - MONITOR=NO
+  extraEnv: |
+    - name: START_MODE
+      value: "1"
+    - name: VERSION
+      value: "stable"
+    - name: PUID
+      value: "1000"
+    - name: PGID
+      value: "1000"
+    - name: TimeZone
+      value: "America/New_York"
+    - name: TEST_ALERT
+      value: "NO"
+    - name: UPDATE_MODS
+      value: "NO"
+    - name: ALLOC_FIXES
+      value: "NO"
+    - name: ALLOC_FIXES_UPDATE
+      value: "NO"
+    - name: UNDEAD_LEGACY
+      value: "NO"
+    - name: UNDEAD_LEGACY_VERSION
+      value: "stable"
+    - name: UNDEAD_LEGACY_UPDATE
+      value: "NO"
+    - name: ENZOMBIES
+      value: "NO"
+    - name: ENZOMBIES_ADDON_SNUFKIN
+      value: "NO"
+    - name: ENZOMBIES_ADDON_ROBELOTO
+      value: "NO"
+    - name: ENZOMBIES_ADDON_NONUDES
+      value: "NO"
+    - name: ENZOMBIES_UPDATE
+      value: "NO"
+    - name: CPM
+      value: "NO"
+    - name: CPM_UPDATE
+      value: "NO"
+    - name: BEPINEX
+      value: "NO"
+    - name: BEPINEX_UPDATE
+      value: "NO"
+    - name: BACKUP
+      value: "YES"
+    - name: MONITOR
+      value: "NO"
     
 ## Expose the 7dtd service and
 ## Provides options for the service so chart users have the full choice
