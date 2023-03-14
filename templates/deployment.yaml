@@ -28,14 +28,13 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["/bin/sh","-c"]
           env:
-          {{- with .Values.deployment.extraEnv }}
-          {{- toYaml . | nindent 10 }}
-          {{- end }}
+            {{- tpl (.Values.deployment.extraEnv) $ | nindent 10 }}
+          {{- if .Values.livenessProbe }}
           livenessProbe:
             tcpSocket:
               port: {{ .Values.livenessProbe.httpGet.port }}
+          {{- end }}
           ports:
           - name: 7dtd-tcp
             containerPort: 26900
@@ -60,4 +59,3 @@ spec:
             protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-      {{ end }}
