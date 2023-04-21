@@ -3,7 +3,7 @@
 ##
 image:
   repository: vinanrra/7dtd-server
-  tag: v0.3.0
+  tag: v0.4.4
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -12,31 +12,53 @@ imagePullSecrets: []
 ##
 deployment:
   replicas: 1
-  extraEnv:
-  # Check the variable that can be passed here: https://github.com/vinanrra/Docker-7DaysToDie/blob/master/docs/parameters.md#7-days-to-die
-    - START_MODE=1
-    - VERSION=stable
-    - PUID=1000
-    - PGID=1000
-    - TimeZone=Europe/Brussels
-    - TEST_ALERT=NO
-    - UPDATE_MODS=NO
-    - ALLOC_FIXES=NO
-    - ALLOC_FIXES_UPDATE
-    - UNDEAD_LEGACY=NO
-    - UNDEAD_LEGACY_VERSION=stable
-    - UNDEAD_LEGACY_UPDATE=NO
-    - ENZOMBIES=NO
-    - ENZOMBIES_ADDON_SNUFKIN=NO
-    - ENZOMBIES_ADDON_ROBELOTO=NO
-    - ENZOMBIES_ADDON_NONUDES=NO
-    - ENZOMBIES_UPDATE=NO
-    - CPM=NO
-    - CPM_UPDATE=NO
-    - BEPINEX=NO
-    - BEPINEX_UPDATE=NO
-    - BACKUP=NO
-    - MONITOR=NO
+  extraEnv: |
+    - name: START_MODE
+      value: "1"
+    - name: TimeZone
+      value: "America/New_York"
+    - name: PUID
+      value: "1000"
+    - name: PGID
+      value: "1000"
+    - name: VERSION
+      value: "stable"
+    - name: TEST_ALERT
+      value: "NO"
+    - name: UPDATE_MODS
+      value: "YESX"
+    - name: ALLOC_FIXES
+      value: "YES"
+    - name: ALLOC_FIXES_UPDATE
+      value: "YES"
+    - name: UNDEAD_LEGACY
+      value: "NO"
+    - name: UNDEAD_LEGACY_VERSION
+      value: "stable"
+    - name: UNDEAD_LEGACY_UPDATE
+      value: "NO"
+    - name: ENZOMBIES
+      value: "NO"
+    - name: ENZOMBIES_ADDON_SNUFKIN
+      value: "NO"
+    - name: ENZOMBIES_ADDON_ROBELOTO
+      value: "NO"
+    - name: ENZOMBIES_ADDON_NONUDES
+      value: "NO"
+    - name: ENZOMBIES_UPDATE
+      value: "NO"
+    - name: CPM
+      value: "NO"
+    - name: CPM_UPDATE
+      value: "NO"
+    - name: BEPINEX
+      value: "NO"
+    - name: BEPINEX_UPDATE
+      value: "NO"
+    - name: BACKUP
+      value: "YES"
+    - name: MONITOR
+      value: "YES"
     
 ## Expose the 7dtd service and
 ## Provides options for the service so chart users have the full choice
@@ -49,7 +71,7 @@ service:
   externalIPs: []
   loadBalancerIP: ""
   loadBalancerSourceRanges: []
-  type: NodePort
+  type: ClusterIP
 
 ## Set the LoadBalancer service type to internal only.
 ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
@@ -82,13 +104,13 @@ ingress:
 #  periodSeconds: 15
 #  timeoutSeconds: 10
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: 7dtd-webadmin
-  initialDelaySeconds: 60
-  periodSeconds: 30
-  timeoutSeconds: 10
+#livenessProbe:
+#  httpGet:
+#    path: /
+#    port: 7dtd-webadmin
+#  initialDelaySeconds: 60
+#  periodSeconds: 30
+#  timeoutSeconds: 10
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
