@@ -90,7 +90,7 @@ ingress:
   enabled: false
   annotations: {}
   path: /
-  hosts: ["7days.k3s.live"]
+  hosts: []
   tls: []
 
 ## Configure liveness and readiness probes
