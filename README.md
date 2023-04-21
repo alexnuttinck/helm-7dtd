@@ -1,5 +1,7 @@
 # Helm Chart for a 7 days to die server
 
+![version](https://img.shields.io/github/tag/alexnuttinck/helm-7dtd.svg?label=release) ![test](https://github.com/alexnuttinck/helm-7dtd/actions/workflows/test.yaml/badge.svg) ![release](https://github.com/alexnuttinck/helm-7dtd/actions/workflows/release.yaml/badge.svg)
+
 Helm Chart to deploy a `7 days to die` server in a Kubernetes cluster. 
 
 ## Introduction
@@ -27,12 +29,12 @@ https://github.com/vinanrra/Docker-7DaysToDie/blob/master/docs/parameters.md#7-d
 
 ### Install the chart
 
-Install the 7d2d helm chart with a release name `my-release`:
+Install the 7dtd helm chart with a release name `my-release`:
 
 TODO
 
 ```bash
-helm install my-release alexnuttinck/7d2d
+helm install my-release alexnuttinck/7dtd
 ```
 
 or
