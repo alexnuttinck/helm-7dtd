@@ -16,7 +16,11 @@ This [Helm](https://github.com/kubernetes/helm) chart installs [7dtd](https://7d
 ## Installation
 ### Add Helm repository
 
-TODO
+```
+helm repo add 7dtd https://alexnuttinck.dev/helm-7dtd/
+helm repo update
+```
+
 ### Configure the chart
 
 The following items can be set via `--set` flag during installation or configured by editing the `values.yaml` directly (need to download the chart first).
@@ -31,13 +35,11 @@ https://github.com/vinanrra/Docker-7DaysToDie/blob/master/docs/parameters.md#7-d
 
 Install the 7dtd helm chart with a release name `my-release`:
 
-TODO
-
 ```bash
-helm install my-release alexnuttinck/7dtd
+helm install my-release 7dtd/7dtd
 ```
 
-or
+or by cloning this repository:
 
 ```
 helm install 7daystodie . -f values.yaml --namespace 7days --create-namespace
