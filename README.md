@@ -6,7 +6,7 @@ Helm Chart to deploy a `7 days to die` server in a Kubernetes cluster.
 
 ## Introduction
 
-This [Helm](https://github.com/kubernetes/helm) chart installs [7d2d](https://7daystodie.com/) in a Kubernetes cluster.
+This [Helm](https://github.com/kubernetes/helm) chart installs [7dtd](https://7daystodie.com/) in a Kubernetes cluster.
 
 ## Prerequisites
 
@@ -58,14 +58,14 @@ The following table lists the configurable parameters of the swagger-ui chart an
 | Parameter                                                                   | Description                                                                                                        | Default                         |
 | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------| ------------------------------- |
 | **Image**                                                                   |
-| `image.repository`                                                          | 7d2d Image name                                                                                                    | `vinanrra/7dtd-server`                    |
-| `image.tag`                                                                 | 7d2d Image tag                                                                                                     | `v0.4.4`                              |
-| `image.pullPolicy`                                                          | 7d2d Image pull policy                                                                                             | `IfNotPresent`                  |
+| `image.repository`                                                          | 7dtd Image name                                                                                                    | `vinanrra/7dtd-server`                    |
+| `image.tag`                                                                 | 7dtd Image tag                                                                                                     | `v0.4.4`                              |
+| `image.pullPolicy`                                                          | 7dtd Image pull policy                                                                                             | `IfNotPresent`                  |
 | **Deployment**                                                              |
 | `deployment.replicas`                                                       | Number of replicas                                                                                                 | `1`                             |
 | `deployment.extraEnv`                                                       | Additional environment                                                                                             |  Check the `values.yaml` file for the default values. |
 | **Service**                                                                 |
-| `service.type`                                                              | Type of service for 7d2d frontend                                                                                  | `NodePort`                      |
+| `service.type`                                                              | Type of service for 7dtd frontend                                                                                  | `NodePort`                      |
 | `service.clusterIP`                                                         | internal cluster service IP (set to "-" to pass an empty value)                                                    | `nil`                           |
 | `service.loadBalancerIP`                                                    | LoadBalancerIP if service type is `LoadBalancer`                                                                   | `nil`                           |
 | `service.loadBalancerSourceRanges`                                          | Address that are allowed when svc is `LoadBalancer`                                                                | `[]`                               |
