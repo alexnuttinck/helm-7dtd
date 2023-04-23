@@ -1,0 +1,27 @@
+apiVersion: v1
+entries:
+  7dtd:
+  - apiVersion: v2
+    appVersion: 0.4.4
+    created: "2023-04-23T10:46:57.752180207Z"
+    description: 7 Days to Die is an open-world game that is a unique combination
+      of first person shooter, survival horror, tower defense, and role-playing games.
+    digest: 6623d6131caad0c3a53219f1b8b5c236a3c3a57564a592ddbbf32ad2ebacf618
+    home: https://7daystodie.com/
+    icon: https://user-images.githubusercontent.com/6136865/29045114-9ae8e510-7bc2-11e7-8487-19552001aafd.png
+    keywords:
+    - 7dtd
+    - 7 Days to Die
+    - game
+    - horror
+    - steam
+    maintainers:
+    - name: alexnuttinck
+      url: https://github.com/alexnuttinck
+    name: 7dtd
+    sources:
+    - https://github.com/alexnuttinck/helm-7dtd
+    urls:
+    - https://github.com/alexnuttinck/helm-7dtd/releases/download/7dtd-0.0.4/7dtd-0.0.4.tgz
+    version: 0.0.4
+generated: "2023-04-23T10:46:57.752188208Z"
